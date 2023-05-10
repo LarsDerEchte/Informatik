@@ -86,7 +86,7 @@ public class ArrayOperationen {
         }
         
         
-        return new int[]{start, 3};
+        return new int[]{start, ende - start + 1};
     }
     // Aufgabenideen
     // 1. Bestimme die größte Zahl im Array
