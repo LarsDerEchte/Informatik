@@ -72,9 +72,19 @@ public class ArrayOperationen {
     public int[] findePlateau(int[]array) {
         int start = 0;
         
+        
         for(;start < array.length; start += 1) {
-            
+            if (array[start] == array[start + 1] ) {
+                break;
+            }
         }
+        
+        
+        int ende = start + 1;
+        while(ende < array.length - 1 && array[ende] == array[ende + 1]) {
+         ende += 1;
+        }
+        
         
         return new int[]{start, 3};
     }
