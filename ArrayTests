@@ -58,4 +58,33 @@ public class ArrayTests {
         System.out.print("Erwarte: {6, 4}, Bekommen: ");
         operationen.druckeArray(plateau3);
     }
+    
+    // 25 = twenty-five
+    // 36 = thirty-six
+    //  9 = nine
+    // 18 = eighteen
+    // 5.000.000 = five-million
+    // 40 = forty
+    //  6 = six
+    // 16 = sixteen
+    // 28 = twenty-eight
+    // 39 = thirty-nine
+    // 56 = fifty-six
+    // 76 = seventy-six
+    // 124 = onehundredtwentyfour
+    // 200 = two-hundred
+    // 245 = twohundredfortyfive
+    // 68 = sixty-eight
+    //  0 = zero, null, oh, love, nought, nil
+    
+    public void testeEnglischeZahlen() {
+        int zahl = 0;
+        String ergebnis = operationen.toEnglish(zahl);
+        System.out.println("zero <=> " + ergebnis);
+        
+        zahl = 1;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("one <=> " + ergebnis);
+    }
+    
 }
