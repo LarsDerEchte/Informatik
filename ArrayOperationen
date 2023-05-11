@@ -92,6 +92,14 @@ public class ArrayOperationen {
     // 1. Bestimme die größte Zahl im Array
     // 2. Bestimme die zweitgrößte Zahl im Array
     // 3. Bestimmte, wie viele Elemente im Array > 10 sind
-    // Test Driven Developement
-    // Edge case = Randfall
+    
+    //Test Driven Developement
+    
+    String[] ENGLISH_NUMBERS = {
+        "zero", "one", "two", "three", "four", "five"
+    };
+    
+    public String toEnglish(int zahl) {
+        return ENGLISH_NUMBERS[zahl];
+    }
 }
