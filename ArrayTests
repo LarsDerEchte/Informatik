@@ -85,6 +85,46 @@ public class ArrayTests {
         zahl = 1;
         ergebnis = operationen.toEnglish(zahl);
         System.out.println("one <=> " + ergebnis);
+
+        zahl = 15;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("fifteen <=> " + ergebnis);
+        
+        zahl = 20;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("twenty <=> " + ergebnis);
+        
+        zahl = 21;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("twenyt-one <=> " + ergebnis);
+        
+        zahl = 23;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("twenty-three <=> " + ergebnis);
+        
+        zahl = 52;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("fifty-two <=> " + ergebnis);
+        
+        zahl = 99;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("ninety-enine <=> " + ergebnis);
+        
+        zahl = 120;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("hundred-twenty <=> " + ergebnis);
+        
+        zahl = 7_623;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("seventhousand-sixhundredtwentythree <=> " + ergebnis);
+        
+        zahl = 1_000_000;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("one million <=> " + ergebnis);
+        
+        zahl = 1_987_654_321;
+        ergebnis = operationen.toEnglish(zahl);
+        System.out.println("one million ninehundredeightysevenmillion-sixhundredfiftyfourthousand-threeehundredtwentyone <=> " + ergebnis);
     }
     
 }
