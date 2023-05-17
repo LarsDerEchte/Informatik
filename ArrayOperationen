@@ -53,53 +53,121 @@ public class ArrayOperationen {
 
         System.out.println( "\n---\n" );
     }
-    
+
     public long summe(int[] zahlen) {
         long summe = 0;
-        
+
         for (int i = 0; i < zahlen.length; i = i + 1) {
             summe = summe + zahlen[i];
         }
-        
+
         return summe;
     }
-    
+
     public double mittelwert(int[] zahlen) {
         double s = summe(zahlen);
         return s / zahlen.length;
     }
-    
+
     public int[] findePlateau(int[]array) {
         int start = 0;
-        
-        
+
         for(;start < array.length; start += 1) {
             if (array[start] == array[start + 1] ) {
                 break;
             }
         }
-        
-        
+
         int ende = start + 1;
         while(ende < array.length - 1 && array[ende] == array[ende + 1]) {
-         ende += 1;
+            ende += 1;
         }
-        
-        
+
         return new int[]{start, ende - start + 1};
     }
     // Aufgabenideen
     // 1. Bestimme die größte Zahl im Array
     // 2. Bestimme die zweitgrößte Zahl im Array
     // 3. Bestimmte, wie viele Elemente im Array > 10 sind
-    
+
     //Test Driven Developement
-    
+
     String[] ENGLISH_NUMBERS = {
-        "zero", "one", "two", "three", "four", "five"
-    };
-    
+            "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+            "ten","eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+            "seventeen", "eighteen", "nineteen"
+        };
+
+    String[] TENS = {
+
+            null, null, "twenty", "thrirty", "forty", "fifty", "sixty", "seventy", "eighty", 
+            "ninety",
+
+        };
+
+    String[] HUNDREDS = {
+
+            "one-hundred", "two-hundred", 
+
+        };
     public String toEnglish(int zahl) {
-        return ENGLISH_NUMBERS[zahl];
-    }
+        if(zahl < ENGLISH_NUMBERS.length) {
+            return ENGLISH_NUMBERS[zahl];
+        } else if (zahl < 100) {
+            int letzte = zahl % 10;
+            int vorletzte = zahl / 10 % 10;
+            if(letzte == 0) {
+                return TENS[vorletzte];
+            }else{
+                return TENS[vorletzte] + "-" + ENGLISH_NUMBERS[letzte];
+            }
+        }
+        else if (zahl < 1000) {
+            int vorvorletzte = zahl / 100;
+            int vorletzte = zahl % 100;
+            int letzte = zahl % 100 / 10 % 10;
+            if(letzte == 10) {
+                return TENS[vorletzte];
+            }else{
+                return ENGLISH_NUMBERS[vorvorletzte] + "hundred" + TENS[letzte] + "-" + ENGLISH_NUMBERS[letzte];
+            }
+        } else if (zahl < 1_000_000_000) {
+            int einer = 0;
+            int zehner = 0;
+            int hunderter = 0;
+            int tausender = 0;
+            int zehntausender = 0;
+            int hunderttausender = 0;
+            int millioner = 0;
+            int zehnmillioner = 0;
+            int hundertmillioner = 0;
+            int milliardener;
+            if(zahl < 100) {
+                int letzte = zahl % 10;
+                int vorletzte = zahl / 10 % 10;
+                if(letzte == 0) {
+                    return TENS[vorletzte];
+                }else{
+                    return TENS[vorletzte] + "-" + ENGLISH_NUMBERS[letzte];
+                }
+            }else if (zahl < 100) {
+                
+            }else if (zahl < 1_000) {
+
+            }else if (zahl < 10_000) {
+
+            }else if (zahl < 100_000) {
+
+            }else if (zahl < 1_000_000) {
+
+            }else if (zahl < 10_000_000) {
+
+            }else if (zahl < 100_000_000) {
+
+            }else if (zahl < 1_000_000_000) {
+
+            }
+        }
+        return "ERROR: Number too large";
+    }    
 }
