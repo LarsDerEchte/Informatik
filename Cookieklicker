@@ -9,26 +9,19 @@ public class Cookieklicker {
 
         fenster.setLayout(new GridLayout(0, 1));
 
-        JLabel lbGruß = new JLabel("Du bist spitze!");
+        JLabel lbGruß = new JLabel("Cookies: 0");
         lbGruß.setFont(new Font(Font.SERIF, Font.BOLD, 48));
         lbGruß.setHorizontalAlignment(JLabel.CENTER);
         fenster.add(lbGruß);
 
-        JLabel lbGruß2 = new JLabel("Du bist spitze");
-        lbGruß2.setFont(new Font(Font.SERIF, Font.BOLD, 48));
-        lbGruß2.setHorizontalAlignment(JLabel.CENTER);
-        fenster.add(lbGruß2);
 
-        JButton bKlicker = new JButton("Klick mich!");
+        JButton bKlicker = new JButton();
+        bKlicker.setIcon(new ImageIcon("Cookie.png"));
         bKlicker.addActionListener(new ActionListener() {
-                int x = 0;
+                int cookies = 0;
                 public void actionPerformed (ActionEvent event) {
-                    int geklickt = 0;
-                    geklickt += 1;
-                    
-                    JOptionPane.showMessageDialog(fenster, "Gleich kommt die gute Zauberfee");
-                    lbGruß.setText("Du bist spitze");
-                    lbGruß2.setText("Ich will eine Pizza");
+                    cookies++;
+                    lbGruß.setText("Cookies: " + cookies);
                 }
             });
         fenster.add(bKlicker);
