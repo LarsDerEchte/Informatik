@@ -14,7 +14,7 @@ public class ZahlenGUI {
     public ZahlenGUI() {
         wandler = new Wandler();
         
-        fenster = new JFrame("Number Converter (c) Mr K.");
+        fenster = new JFrame("Number Converter (c) Lars R.");
         fenster.setSize(800, 600);
         fenster.setLayout(new GridLayout(0, 1));
 
