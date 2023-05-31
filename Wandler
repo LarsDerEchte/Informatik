@@ -17,6 +17,10 @@ public class Wandler {
 
     public String toEnglish(int zahl) {
         // 74.074.074.074.074
+        if (zahl < 0){
+            return "minus " + toEnglish(zahl * (-1));
+        }
+        
         if (zahl == 0) {
             return "nought"; // Beendet Methode
         }
