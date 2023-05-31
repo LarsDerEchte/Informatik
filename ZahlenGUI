@@ -1,0 +1,61 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ZahlenGUI {
+    private Wandler wandler;
+    
+    private JFrame fenster;
+    private JLabel lbNumber;
+    private  JLabel lbGruß2;
+    private JButton bKlicker;
+    private JTextField tfInput;
+    private JTextArea taOutput;
+    
+    public ZahlenGUI()  {
+        JFrame fenster = new JFrame("Number Vonverter (c) Lars R.");
+        fenster.setSize(800, 600);
+        fenster.setLayout(new GridLayout(0, 1));
+
+        lbNumber = new JLabel("Du bist spitze!");
+        lbNumber.setFont(new Font(Font.SERIF, Font.BOLD, 48));
+        lbNumber.setHorizontalAlignment(JLabel.CENTER);
+        fenster.add(lbNumber);
+
+        JLabel lbGruß2 = new JLabel("Du bist spitze");
+        lbGruß2.setFont(new Font(Font.SERIF, Font.BOLD, 48));
+        lbGruß2.setHorizontalAlignment(JLabel.CENTER);
+        fenster.add(lbGruß2);
+
+        bKlicker = new JButton("Klick mich!");
+        bKlicker.addActionListener(new ActionListener() {
+                public void actionPerformed (ActionEvent event) {
+                    buttonGeklickt();
+                }
+            });
+
+        tfInput = new JTextField("1.234");
+        fenster.add(tfInput);
+
+        fenster.add(bKlicker);
+        
+        taOutput = new JTextArea("One thousand");
+        fenster.add(taOutput);
+        
+        fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fenster.setVisible(true);
+    }
+
+    private void buttonGeklickt() {
+        String zahlStr = tfInput.getText();
+        int zahl = Integer.parseInt(zahlStr);
+        String ausgabe = wandler.convertNumber(zahl);
+        
+    }
+
+    public static void main(String[] args) {
+        new ZahlenGUI();
+    }
+
+}
+
